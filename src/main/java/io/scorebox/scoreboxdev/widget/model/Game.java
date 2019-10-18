@@ -15,8 +15,13 @@ import java.util.Date;
 @TypeAlias("Game")
 public class Game extends FeedItem {
 
+    private long homeTeamID;
     private String homeTeam;
+    private String homeTeamLogo;
+
+    private long guestTeamID;
     private String guestTeam;
+    private String guestTeamLogo;
 
     private Date dateOfGame;
     private GameStatus status;
