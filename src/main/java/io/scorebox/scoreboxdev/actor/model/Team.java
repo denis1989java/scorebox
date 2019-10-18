@@ -7,9 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Team.
@@ -30,5 +32,6 @@ public class Team {
     @Column(name = "NAME")
     private String name;
 
-    private List<User> users;
+    @ManyToMany(mappedBy = "teams")
+    private Set<User> users = new HashSet<>();
 }
